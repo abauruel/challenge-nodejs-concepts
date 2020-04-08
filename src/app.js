@@ -59,7 +59,8 @@ app.delete("/repositories/:id", (req, res) => {
     return res.status(400).json({ message: "Irepository not found" });
   }
 
-  repositories.splice(indexRepository);
+  repositories.splice(indexRepository, 1);
+  console.log(repositories);
   return res.status(204).send();
 });
 
