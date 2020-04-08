@@ -60,7 +60,7 @@ app.delete("/repositories/:id", (req, res) => {
   }
 
   repositories.splice(indexRepository, 1);
-  console.log(repositories);
+
   return res.status(204).send();
 });
 
