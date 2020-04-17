@@ -54,9 +54,11 @@ app.put("/repositories/:id", (request, response) => {
 app.delete("/repositories/:id", (req, res) => {
   // TODO
   const { id } = req.params;
-  const indexRepository = repositories.findIndex((repo) => (repo.id = id));
+
+  const indexRepository = repositories.findIndex((repo) => repo.id === id);
+
   if (indexRepository < 0) {
-    return res.status(400).json({ message: "Irepository not found" });
+    return res.status(400).json({ message: "repository not found" });
   }
 
   repositories.splice(indexRepository, 1);
